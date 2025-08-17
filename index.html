@@ -1,8 +1,39 @@
 <!doctype html>
 <html lang="en">
-  <head><meta charset="UTF-8" /><title>Vite + TS</title></head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard (TypeScript)</title>
+  </head>
   <body>
-    <h1>Weather Dashboard</h1>
+    <main id="app">
+      <h1>Weather Dashboard</h1>
+
+      <form id="search-form" aria-label="Search city">
+        <input
+          id="city-input"
+          type="text"
+          placeholder="Enter city (e.g., London)"
+          required
+          autocomplete="off" />
+        <button type="submit">Search</button>
+      </form>
+
+      <section id="status" role="status" aria-live="polite"></section>
+
+      <section id="current" aria-labelledby="current-title">
+        <h2 id="current-title">Current Conditions</h2>
+        <div id="current-card"></div>
+      </section>
+
+      <section id="forecast" aria-labelledby="forecast-title">
+        <h2 id="forecast-title">5-Day Forecast</h2>
+        <div id="forecast-grid" class="grid"></div>
+      </section>
+    </main>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
